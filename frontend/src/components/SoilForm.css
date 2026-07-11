@@ -1,0 +1,137 @@
+.soil-form-section {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-card {
+  background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(46, 125, 50, 0.1);
+  border: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+.form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #1b5e20;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.form-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: #558b2f;
+  text-align: center;
+  margin: 0 0 30px 0;
+  font-size: 0.95rem;
+}
+
+.soil-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2e7d32;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid #c8e6c9;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  background: white;
+  color: #1b5e20;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+.form-input::placeholder {
+  color: #a5d6a7;
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  padding: 16px;
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Growing plant animation on button */
+.grow-plant {
+  display: inline-block;
+  animation: growPlant 1.5s ease-in-out infinite;
+}
+
+@keyframes growPlant {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.2) translateY(-3px);
+  }
+}
+
+@media (max-width: 768px) {
+  .soil-form-section {
+    padding: 40px 15px;
+  }
+  .form-card {
+    padding: 25px;
+  }
+  .form-title {
+    font-size: 1.5rem;
+  }
+  .soil-form {
+    gap: 12px;
+  }
+}

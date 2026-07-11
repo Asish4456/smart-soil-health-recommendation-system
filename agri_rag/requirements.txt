@@ -1,0 +1,10 @@
+google-generativeai
+langchain
+langchain-classic
+langchain-google-genai
+langchain-chroma
+chromadb
+gTTS
+pypdf
+python-dotenv
+streamlit

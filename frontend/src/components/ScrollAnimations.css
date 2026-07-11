@@ -1,0 +1,47 @@
+.scroll-animations {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+  will-change: contents;
+}
+
+/* Falling leaf */
+.falling-leaf {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Earthworm */
+.earthworm-container {
+  position: fixed;
+  bottom: 0;
+  right: 40px;
+  z-index: 101;
+  pointer-events: none;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.earthworm-svg {
+  width: 60px;
+  height: 120px;
+}
+
+.earthworm-segment {
+  fill: #8d6e63;
+  stroke: #6d4c41;
+  stroke-width: 1;
+}
+
+.earthworm-segment:nth-child(odd) {
+  fill: #a1887f;
+}

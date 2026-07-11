@@ -1,0 +1,154 @@
+.report-cards-section {
+  padding: 40px 20px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.report-cards-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #1b5e20;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.report-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(46, 125, 50, 0.08);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.report-card:hover {
+  box-shadow: 0 8px 30px rgba(46, 125, 50, 0.12);
+}
+
+.report-card-header {
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.report-card-farmer {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1b5e20;
+  margin: 0;
+}
+
+.report-card-expand {
+  font-size: 1.5rem;
+  color: #81c784;
+  transition: transform 0.3s ease;
+}
+
+.report-card-expand.open {
+  transform: rotate(180deg);
+}
+
+.health-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.health-badge.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  50% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+}
+
+.health-excellent {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.health-moderate {
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.health-poor {
+  background: #fce4ec;
+  color: #c62828;
+}
+
+.report-card-body {
+  padding: 0 28px 28px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.report-detail {
+  padding: 16px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.report-detail:last-child {
+  border-bottom: none;
+}
+
+.report-detail-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #81c784;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.report-detail-content {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.report-detail-content ul {
+  margin: 4px 0 0 0;
+  padding-left: 20px;
+}
+
+.report-detail-content li {
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.no-issues {
+  color: #81c784;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .report-cards-section {
+    padding: 20px 15px 60px;
+  }
+  .report-cards-title {
+    font-size: 1.6rem;
+  }
+  .report-card-header {
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .report-card-body {
+    padding: 0 20px 20px;
+  }
+}
