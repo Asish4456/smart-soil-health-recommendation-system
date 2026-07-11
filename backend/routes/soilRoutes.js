@@ -155,8 +155,13 @@ router.post("/add", async (req, res) => {
 });
 
 router.get("/all", async (req, res) => {
-  const data = await Soil.find();
-  res.json(data);
+  try {
+    const data = await Soil.find();
+    res.json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
 });
 
 module.exports = router;
