@@ -14,7 +14,8 @@ app.use(cors({
 app.use(express.json());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/soilDB";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://myAtlasDBUser:Asish%404456@myatlasclusteredu.yt5ejy9.mongodb.net/soilDB?retryWrites=true&w=majority";
+console.log("MONGODB_URI loaded:", MONGODB_URI ? "YES (length: " + MONGODB_URI.length + ")" : "NO");
 mongoose.connect(MONGODB_URI)
 .then(() => {
   console.log("✅ MongoDB Connected");
