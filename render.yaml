@@ -27,16 +27,3 @@ services:
         sync: false
       - key: PORT
         value: 8000
-
-  # Frontend - React Static Site
-  - type: static_site
-    name: soil-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: build
-    envVars:
-      - key: REACT_APP_BACKEND_URL
-        value: https://soil-backend.onrender.com
-      - key: REACT_APP_RAG_URL
-        value: https://soil-rag-api.onrender.com
