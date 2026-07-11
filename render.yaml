@@ -1,0 +1,42 @@
+services:
+
+  # Backend - Node.js/Express API
+  - type: web
+    name: soil-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://soil-frontend.onrender.com
+      - key: NODE_ENV
+        value: production
+
+  # RAG API - Python/FastAPI
+  - type: web
+    name: soil-rag-api
+    runtime: python
+    rootDir: agri_rag
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn agri_rag_api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: PORT
+        value: 8000
+
+  # Frontend - React Static Site
+  - type: static_site
+    name: soil-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        value: https://soil-backend.onrender.com
+      - key: REACT_APP_RAG_URL
+        value: https://soil-rag-api.onrender.com
