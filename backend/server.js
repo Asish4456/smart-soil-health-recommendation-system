@@ -32,6 +32,18 @@ app.get("/", (req, res) => {
   res.send("🌱 Smart Soil Health API is running...");
 });
 
+// Health Check Route
+app.get("/health", (req, res) => {
+  const states = ["disconnected", "connected", "connecting", "disconnecting"];
+  res.json({
+    server: "ok",
+    mongodbState: states[mongoose.connection.readyState] || "unknown",
+    readyState: mongoose.connection.readyState,
+    hasUri: !!process.env.MONGODB_URI,
+    envUriLength: (process.env.MONGODB_URI || "").length
+  });
+});
+
 // Global Error Handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
