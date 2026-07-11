@@ -15,7 +15,7 @@ app.use(express.json());
 
 // MongoDB Connection - use hardcoded URI since Render dashboard has wrong SRV URI
 const MONGODB_URI = "mongodb://myAtlasDBUser:Asish4456@ac-kunba6w-shard-00-00.yt5ejy9.mongodb.net:27017,ac-kunba6w-shard-00-01.yt5ejy9.mongodb.net:27017,ac-kunba6w-shard-00-02.yt5ejy9.mongodb.net:27017/soilDB?ssl=true&replicaSet=atlas-8n5uxb-shard-0&authSource=admin&retryWrites=true&w=majority";
-console.log("MONGODB_URI loaded:", MONGODB_URI ? "YES (length: " + MONGODB_URI.length + ")" : "NO");
+console.log("MONGODB_URI loaded:", MONGODB_URI ? "YES" : "NO");
 mongoose.connect(MONGODB_URI)
 .then(() => {
   console.log("✅ MongoDB Connected");
