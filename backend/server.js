@@ -14,7 +14,7 @@ app.use(cors({
 app.use(express.json());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://myAtlasDBUser:Asish%404456@myatlasclusteredu.yt5ejy9.mongodb.net/soilDB?retryWrites=true&w=majority";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://myAtlasDBUser:Asish4456@ac-kunba6w-shard-00-00.yt5ejy9.mongodb.net:27017,ac-kunba6w-shard-00-01.yt5ejy9.mongodb.net:27017,ac-kunba6w-shard-00-02.yt5ejy9.mongodb.net:27017/soilDB?ssl=true&replicaSet=atlas-8n5uxb-shard-0&authSource=admin&retryWrites=true&w=majority";
 console.log("MONGODB_URI loaded:", MONGODB_URI ? "YES (length: " + MONGODB_URI.length + ")" : "NO");
 mongoose.connect(MONGODB_URI)
 .then(() => {
